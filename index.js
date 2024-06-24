@@ -3,8 +3,9 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
 
+// import routes
 import userRoutes from './routes/user.js';
-import recipeRoutes from './routes/recipe.js';
+
 
 // configure dotenv
 dotenv.config();
@@ -28,7 +29,7 @@ app.use(cookieParser());
 
 // use routes
 app.use(userRoutes);
-app.use(recipeRoutes);
+
 
 // error
 app.use((err, req, res, next) => {

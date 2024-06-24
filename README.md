@@ -1,25 +1,28 @@
-# Recipes Project
+# Projects Template
 
-This project is designed for students to build a web application using Express and MySQL2. The project will involve creating routes and controllers for users and recipes, implementing user authentication using cookies, and utilizing helper and utility functions.
+These projects are designed for students to build a web application using Express and MySQL2. The project will involve creating routes and controllers for users and  implementing user authentication using cookies, and utilizing middleware utility functions.
 
 ## Introduction
 
-The Recipes project aims to provide a platform where users can register, log in, and manage their favorite recipes. The backend is built with Express and MySQL2, with authentication handled via cookies.
+These projects aim to provide a platform where users can register, log in, and manage their favorite recipes. The backend is built with Express and MySQL2, with authentication handled via cookies.
 
 ## Project Structure
 
 ```md
-Recipes/
+Project/
 ├── controllers/
 │   ├── userController.js
-│   ├── recipeController.js
+│   ├── ---------------.js
 ├── middleware/
 │   ├── verifyToken.js
 ├── routes/
 │   ├── userRoutes.js
-│   ├── recipeRoutes.js
+│   ├── ----------.js
 ├── utils/
-│   ├── someUtilFunction.js
+│   ├── hashPassword.js
+|   |── matchPasswords.js
+|   |── validateEmail.js
+|   |── validatePasswords.js
 ├── .env
 ├── index.js
 ├── package.json
@@ -28,12 +31,8 @@ Recipes/
 
 ## Setup Instructions
 
-1. **Clone the repository:**
-
-   ```bash
-   git clone https://github.com/your-username/recipes.git
-   cd recipes
-   ```
+1. **Use this Template reo:**
+[use this template to create your repo](https://github.com/samirm00/express-mysql-template)
 
 2. **Install dependencies:**
 
@@ -80,7 +79,7 @@ SECRET_KEY=your_secret_key
 - **POST /login**
   - Logs in an existing user.
 
-### Recipe Routes
+### Other Routes depending on your project ex: recipes
 
 - **GET /recipes**
   - Retrieves all recipes.
@@ -107,7 +106,7 @@ SECRET_KEY=your_secret_key
 
 - Manages CRUD operations for recipes.
 
-## Helper Functions
+## Middleware Functions
 
 ### Verify Token (`helpers/verifyToken.js`)
 
@@ -115,9 +114,13 @@ SECRET_KEY=your_secret_key
 
 ## Utility Functions
 
-### Some Util Function (`utils/someUtilFunction.js`)
+### hashPassword.js (`utils/hashPassword.js`)
 
-- Contains various utility functions that assist in the application.
+### matchPasswords.js (`utils/matchPasswords.js.`)
+
+### validateEmail.js (`utils/validateEmail.js`)
+
+### validatePasswords.js (`utils/validatePasswords.js`)
 
 ## Authentication
 
