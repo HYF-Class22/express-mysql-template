@@ -1,40 +1,44 @@
-# Projects Template
+# Express and MySQL Template
 
-These projects are designed for students to build a web application using Express and MySQL2. The project will involve creating routes and controllers for users and implementing user authentication using cookies, and utilizing middleware utility functions.
+This project template facilitates the development of web applications using Express.js and MySQL. It includes user authentication via cookies and provides a foundation for building APIs to manage recipes or similar entities.
 
 ## Introduction
 
-These projects aim to provide a platform where users can register, log in, and manage their favorite recipes or flights. The backend is built with Express and MySQL2, with authentication handled via cookies.
+This template is designed to help developers create a robust web application backend using Express.js and MySQL. It focuses on user registration, authentication, and authorization, allowing authenticated users to manage recipes (or similar entities) through defined APIs.
 
 ## Description
 
-- You need to build different APIs using express ex: Recipes.
-- you need to able to login existing user.
-- You need to be able to add a new user.
-- non-authenticate user can only see all recipes, BUT he is not able to delete, update or add Recipe.
-- You need to be able to add, get all, getById, update and delete Recipes.
+- Implement various APIs using Express.js (e.g., Recipes).
+- Support user registration and login functionality.
+- Non-authenticated users can view all recipes but cannot modify them.
+- Authenticated users can perform CRUD (Create, Read, Update, Delete) operations on recipes.
 
 ## Project Structure
 
-```md
+```plaintext
 Project/
-├── controllers/
-│   ├── userController.js
-│   ├── recipeController.js <!-- depending on the project -->
-├── middleware/
-│   ├── verifyToken.js
-├── routes/
-│   ├── userRoutes.js
-│   ├── recipeRoutes.js <!-- depending on the project -->
-├── utils/
-│   ├── hashPassword.js
-│   ├── matchPasswords.js
-│   ├── validateEmail.js
-│   ├── validatePasswords.js
-├── .env
-├── index.js
-├── package.json
-└── README.md
+|-- config/
+|   ├── db.js           # Database configuration
+|-- controllers/
+|   ├── userController.js       # Handles user-related operations
+| 
+|-- middleware/
+|   ├── verifyToken.js   # Middleware to verify user authentication
+|-- models/
+|   ├── user.js          # Defines user schema for MySQL
+|-- routes/
+|   ├── userRoutes.js    # Routes for user-related endpoints
+| 
+|-- utils/
+|   ├── hashPassword.js      # Utility to hash user passwords
+|   ├── matchPasswords.js    # Utility to compare passwords
+|   ├── validateEmail.js     # Utility to validate email format
+|   ├── validatePasswords.js # Utility to validate password complexity
+|-- .babelrc          # Babel configuration for ES6 support
+|-- .env              # Environment variables configuration
+|-- index.js          # Entry point of the application
+|-- package.json      # Dependencies and scripts
+|-- README.md         # This file
 ```
 
 ## Setup Instructions
@@ -52,7 +56,7 @@ Project/
 
    - Create a `.env` file in the root directory and add the following:
 
-     ```env
+     ```plaintext
      DB_HOST=your_database_host
      DB_USER=your_database_user
      DB_PASSWORD=your_database_password
@@ -68,14 +72,15 @@ Project/
 
 ## Environment Variables
 
-Ensure you have the following environment variables set up in your `.env` file:
+Ensure the following environment variables are set in your `.env` file:
 
-```env
-DB_HOST=your_database_host
+```plaintext
+PORT=5002
+TOKEN_ACCESS_SECRET=your_token_secret
+DB_NAME=your_database_name
 DB_USER=your_database_user
 DB_PASSWORD=your_database_password
-DB_NAME=your_database_name
-SECRET_KEY=your_secret_key
+DB_HOST=your_database_host
 ```
 
 ## Routes
@@ -88,7 +93,7 @@ SECRET_KEY=your_secret_key
 - **POST /login**
   - Logs in an existing user.
 
-### Recipe Routes  <!-- Depending on the project-->
+### Recipe Routes
 
 - **GET /recipes**
   - Retrieves all recipes.
@@ -109,41 +114,41 @@ SECRET_KEY=your_secret_key
 
 ### User Controller (`controllers/userController.js`)
 
-- Handles user registration, login, and other user-related actions.
+Handles user registration, login, and other user-related actions.
 
-### Recipe Controller (`controllers/recipeController.js`) <!-- Depending on the project-->
+### Recipe Controller (`controllers/recipeController.js`)
 
-- Manages CRUD operations for recipes.
+Manages CRUD operations for recipes.
 
 ## Middleware Functions
 
 ### Verify Token (`middleware/verifyToken.js`)
 
-- A middleware function to verify user tokens for authentication purposes.
+Middleware function to verify user tokens for authentication purposes.
 
 ## Utility Functions
 
 ### hashPassword.js (`utils/hashPassword.js`)
 
-- Hashes user passwords for secure storage.
+Utility to hash user passwords for secure storage.
 
 ### matchPasswords.js (`utils/matchPasswords.js`)
 
-- Compares plain and hashed passwords for login verification.
+Utility to compare plain and hashed passwords for login verification.
 
 ### validateEmail.js (`utils/validateEmail.js`)
 
-- Validates email format.
+Utility to validate email format.
 
 ### validatePasswords.js (`utils/validatePasswords.js`)
 
-- Ensures passwords meet required complexity criteria.
+Utility to ensure passwords meet required complexity criteria.
 
 ## Authentication
 
 - Users must register and log in to perform certain actions.
 - Authentication is handled using cookies.
-- The `verifyToken` middleware function ensures that only authenticated users can access certain routes.
+- The `verifyToken` middleware function ensures that only authenticated users can access restricted routes.
 
 ## Resources
 
