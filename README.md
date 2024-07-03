@@ -21,14 +21,14 @@ Project/
 |   ├── db.js           # Database configuration
 |-- controllers/
 |   ├── userController.js       # Handles user-related operations
-| 
+|
 |-- middleware/
 |   ├── verifyToken.js   # Middleware to verify user authentication
 |-- models/
 |   ├── user.js          # Defines user schema for MySQL
 |-- routes/
 |   ├── userRoutes.js    # Routes for user-related endpoints
-| 
+|
 |-- utils/
 |   ├── hashPassword.js      # Utility to hash user passwords
 |   ├── matchPasswords.js    # Utility to compare passwords
@@ -88,6 +88,7 @@ DB_HOST=your_database_host
 ### User Routes
 
 - **POST /register**
+
   - Registers a new user.
 
 - **POST /login**
@@ -96,15 +97,19 @@ DB_HOST=your_database_host
 ### Recipe Routes
 
 - **GET /recipes**
+
   - Retrieves all recipes.
 
 - **POST /recipes**
+
   - Creates a new recipe (authenticated users only).
 
 - **GET /recipes/:id**
+
   - Retrieves a single recipe by ID.
 
 - **PUT /recipes/:id**
+
   - Updates a recipe by ID (authenticated users only).
 
 - **DELETE /recipes/:id**
