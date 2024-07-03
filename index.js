@@ -10,6 +10,7 @@ import createRecipeTable from './models/recipe.js';
 
 // import routes
 import userRoutes from './routes/user.js';
+import recipeRoutes from './routes/recipe.js';
 
 // configure dotenv
 dotenv.config();
@@ -36,6 +37,7 @@ createRecipeTable();
 
 // use routes
 app.use(userRoutes);
+app.use(recipeRoutes);
 
 // error
 app.use((err, req, res, next) => {

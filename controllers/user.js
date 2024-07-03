@@ -7,6 +7,12 @@ import matchPasswords from '../utils/matchPasswords.js';
 import hashPassword from '../utils/hashPassword.js';
 import query from '../config/db.js';
 
-const userControllers = {};
+const userControllers = {
+    register: async (req, res) => {},
+
+    login: async (req, res) => {},
+
+    logout: async (req, res) => {},
+};
 
 export default userControllers;
