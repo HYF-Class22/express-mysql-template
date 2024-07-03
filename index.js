@@ -5,6 +5,9 @@ import cookieParser from 'cookie-parser';
 import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
 
+import createUserTable from './models/user.js';
+import createRecipeTable from './models/recipe.js';
+
 // import routes
 import userRoutes from './routes/user.js';
 
@@ -26,6 +29,10 @@ app.use(cookieParser());
 
 // Serve static files
 app.use(express.static(path.join(PATH, 'public')));
+
+// create tables
+createUserTable();
+createRecipeTable();
 
 // use routes
 app.use(userRoutes);
